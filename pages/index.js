@@ -3,17 +3,38 @@ import Header from '../componants/Header'
 import Footer from '../componants/Footer'
 import MyLayout from '../componants/MyLayout'
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function Home(props) {
   return (
+    <>
     <MyLayout >
-      <h1>XKCD</h1>
-      <div>
-        <p>{props.comics[0].safe_title}</p>
-        <img src={props.comics[0].img} />
-      </div>
-      <Footer propsIds={props.comics}/>
+      <Container>
+        <Row>
+        </Row>
+        <Row>
+          <Col><h1>XKCD</h1></Col>
+        </Row>
+        <Row>
+        </Row>
+        <Row>
+          <Col><p>{props.comics[0].safe_title}</p></Col>
+        </Row>
+        <Row>
+          <Col><img src={props.comics[0].img} /></Col>
+        </Row>
+        <Row>
+        <Col><Footer propsIds={props.comics}/></Col>
+        </Row>
+
+      </Container>
     </MyLayout>
-    
+    </>
   )
 }
 
